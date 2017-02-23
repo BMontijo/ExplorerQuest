@@ -1,0 +1,21 @@
+<resources>
+    <!-- The application name -->
+    <string name="app_name">Explorer Quest - Android</string>
+
+    <!-- Title of game, shown on start screen -->
+    <string name="title">Explorer Quest</string>
+
+    <!-- Start button text -->
+    <string name="start_button">Start</string>
+
+    <!-- Character selection text, asking user to choose character -->
+    <string name="character_select">Choose a character:</string>
+
+    <!-- Dora button text -->
+    <string name="dora">Dora</string>
+
+    <!-- Boots button text -->
+    <string name="boots">Boots</string>
+
+
+</resources>
