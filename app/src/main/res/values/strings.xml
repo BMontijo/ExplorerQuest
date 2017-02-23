@@ -5,6 +5,15 @@
     <!-- Title of game, shown on start screen -->
     <string name="title">Explorer Quest</string>
 
+    <!-- Character Selection title, action bar title for character selection screen -->
+    <string name="activity_character_selection">Character Selection</string>
+
+    <!-- Story title, action bar title for story screen -->
+    <string name="activity_story">Story</string>
+
+    <!-- Combat title, action bar title for story screen -->
+    <string name="activity_combat">Combat</string>
+
     <!-- Start button text -->
     <string name="start_button">Start</string>
 
