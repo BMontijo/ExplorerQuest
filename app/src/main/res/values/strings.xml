@@ -21,10 +21,15 @@
     <string name="character_select">Choose a character:</string>
 
     <!-- Dora button text -->
-    <string name="dora">Dora</string>
+    <string name="dora_button">Dora</string>
 
     <!-- Boots button text -->
-    <string name="boots">Boots</string>
+    <string name="boots_button">Boots</string>
 
+    <!-- Continue button text -->
+    <string name="next_button">Next</string>
+
+    <!-- Hint text for story activity, dev use only -->
+    <string name="hint_story_text">Story and updates shown here.</string>
 
 </resources>

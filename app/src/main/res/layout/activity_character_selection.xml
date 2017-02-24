@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:text="@string/dora"/>
+        android:text="@string/dora_button"/>
 
     <Button
         android:id="@+id/button_boots"
@@ -32,5 +32,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:text="@string/boots"/>
+        android:text="@string/boots_button"/>
 </LinearLayout>
