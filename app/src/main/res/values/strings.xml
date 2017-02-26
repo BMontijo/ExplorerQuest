@@ -29,7 +29,22 @@
     <!-- Continue button text -->
     <string name="next_button">Next</string>
 
-    <!-- Hint text for story activity, dev use only -->
-    <string name="hint_story_text">Story and updates shown here.</string>
+    <!-- Tools text for story activity, dev use only -->
+    <string name="tools_story_text">Story and updates shown here.</string>
+
+    <!-- Attack button text -->
+    <string name="attack_button">Attack</string>
+
+    <!-- Magic button text -->
+    <string name="magic_button">Magic</string>
+
+    <!-- Tools text for combat activity, dev use only -->
+    <string name="tools_combat_text">Combat actions and result shown here.</string>
+
+    <!-- Tools text for hero stats, dev use only -->
+    <string name="tools_hero_stats_text">Hero name\nHealth:</string>
+
+    <!-- Tools text for enemy stats, dev use only -->
+    <string name="tools_enemy_stats_text">Enemy name\nHealth:</string>
 
 </resources>

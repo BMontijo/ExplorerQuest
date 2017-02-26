@@ -17,7 +17,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textSize="36sp"
-        android:hint="@string/hint_story_text"/>
+        tools:text="@string/tools_story_text"/>
 
     <Button
         android:id="@+id/button_next"

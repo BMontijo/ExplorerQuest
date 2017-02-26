@@ -20,7 +20,10 @@
             android:label="@string/activity_character_selection" />
         <activity
             android:name=".StoryActivity"
-            android:label="@string/activity_story"></activity>
+            android:label="@string/activity_story" />
+        <activity
+            android:name=".CombatActivity"
+            android:label="@string/activity_combat"></activity>
     </application>
 
 </manifest>
