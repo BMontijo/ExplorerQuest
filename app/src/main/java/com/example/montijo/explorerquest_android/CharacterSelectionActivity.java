@@ -27,7 +27,7 @@ public class CharacterSelectionActivity extends AppCompatActivity {
                 Intent storyIntent = new Intent(CharacterSelectionActivity.this, StoryActivity.class);
 
                 // pass character to activity intent
-                //storyIntent.putExtra(, hero);
+                storyIntent.putExtra("Hero", hero);
 
                 // start the new activity
                 startActivity(storyIntent);
@@ -41,10 +41,14 @@ public class CharacterSelectionActivity extends AppCompatActivity {
         boots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO add character creation code here
+                // create Boots character
+                Character hero = new Character("Boots");
 
                 // create intent to start Story Activity
                 Intent storyIntent = new Intent(CharacterSelectionActivity.this, StoryActivity.class);
+
+                // pass character to activity intent
+                storyIntent.putExtra("Hero", hero);
 
                 // start the new activity
                 startActivity(storyIntent);
