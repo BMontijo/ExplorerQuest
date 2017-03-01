@@ -1,150 +1,154 @@
 package com.example.montijo.explorerquest_android;
 
+import java.io.Serializable;
+
 /**
  * Created by Brian on 2/26/2017.
  */
 
-public class Character {
-    private String name;
-    private int health;
-    private int maxHealth;
-    private int attack;
-    private int magic;
-    private int defense;
-    private int damage;
-    private int magicDamage;
-    private int agility;
-    private boolean isAlive;
+public class Character implements Serializable {
+    private String mName;
+    private int mHealth;
+    private int mMaxHealth;
+    private int mAttack;
+    private int mMagic;
+    private int mDefense;
+    private int mDamage;
+    private int mMagicDamage;
+    private int mAgility;
+    private boolean mIsAlive;
 
     public Character(String character) {
         if (character.equals("Dora")) {
             // create Dora character - warrior
-            this.setName("Dora");
-            this.setHealth(100);
-            this.setAttack(10);
-            this.setMagic(1);
-            this.setDefense(8);
-            this.setDamage(10);
-            this.setMagicDamage(3);
-            this.setAgility(3);
-            this.setAlive(true);
+            this.setmName("Dora");
+            this.setmHealth(100);
+            this.setmMaxHealth(100);
+            this.setmAttack(10);
+            this.setmMagic(1);
+            this.setmDefense(8);
+            this.setmDamage(10);
+            this.setmMagicDamage(3);
+            this.setmAgility(3);
+            this.setmIsAlive(true);
         } else if (character.equals("Boots")) {
             // create Boots character - mage
-            this.setName("Boots");
-            this.setHealth(100);
-            this.setAttack(3);
-            this.setMagic(10);
-            this.setDefense(5);
-            this.setDamage(4);
-            this.setMagicDamage(10);
-            this.setAgility(6);
-            this.setAlive(true);
+            this.setmName("Boots");
+            this.setmHealth(100);
+            this.setmMaxHealth(100);
+            this.setmAttack(3);
+            this.setmMagic(10);
+            this.setmDefense(5);
+            this.setmDamage(4);
+            this.setmMagicDamage(10);
+            this.setmAgility(6);
+            this.setmIsAlive(true);
         }
     }
 
-    public String getName() {
-        return name;
+    public String getmName() {
+        return mName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setmName(String mName) {
+        this.mName = mName;
     }
 
-    public int getMagicDamage() {
-        return magicDamage + Dice.rollD6();
+    public int getmMagicDamage() {
+        return mMagicDamage;
     }
 
-    public void setMagicDamage(int magicDamage) {
-        this.magicDamage = magicDamage;
+    public void setmMagicDamage(int mMagicDamage) {
+        this.mMagicDamage = mMagicDamage;
     }
 
-    public int getAttack() {
-        return attack + Dice.rollD6();
+    public int getmAttack() {
+        return mAttack;
     }
 
-    public void setAttack(int attack) {
-        this.attack = attack;
+    public void setmAttack(int mAttack) {
+        this.mAttack = mAttack;
     }
 
-    public int getMagic() {
-        return magic + Dice.rollD6();
+    public int getmMagic() {
+        return mMagic;
     }
 
-    public void setMagic(int magic) {
-        this.magic = magic;
+    public void setmMagic(int mMagic) {
+        this.mMagic = mMagic;
     }
 
-    public int getDefense() {
-        return defense + Dice.rollD6();
+    public int getmDefense() {
+        return mDefense;
     }
 
-    public void setDefense(int defense) {
-        this.defense = defense;
+    public void setmDefense(int mDefense) {
+        this.mDefense = mDefense;
     }
 
-    public int getDamage() {
-        return damage + Dice.rollD6();
+    public int getmDamage() {
+        return mDamage;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public void setmDamage(int mDamage) {
+        this.mDamage = mDamage;
     }
 
-    public int getAgility() {
-        return agility + Dice.rollD6();
+    public int getmAgility() {
+        return mAgility;
     }
 
-    public void setAgility(int agility) {
-        this.agility = agility;
+    public void setmAgility(int mAgility) {
+        this.mAgility = mAgility;
     }
 
-    public boolean isAlive() {
-        return isAlive;
+    public boolean ismIsAlive() {
+        return mIsAlive;
     }
 
-    public void setAlive(boolean alive) {
-        isAlive = alive;
+    public void setmIsAlive(boolean mIsAlive) {
+        this.mIsAlive = mIsAlive;
     }
 
-    public int getHealth() {
-        return health;
+    public int getmHealth() {
+        return mHealth;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setmHealth(int mHealth) {
+        this.mHealth = mHealth;
     }
 
-    public int getMaxHealth() {
-        return maxHealth;
+    public int getmMaxHealth() {
+        return mMaxHealth;
     }
 
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
+    public void setmMaxHealth(int mMaxHealth) {
+        this.mMaxHealth = mMaxHealth;
     }
 
     public void levelUp() {
         // increase character stats
-        this.setMaxHealth(this.getMaxHealth() + this.getMaxHealth());
-        this.setAgility(agility + 2);
+        this.setmMaxHealth(this.getmMaxHealth() + this.getmMaxHealth());
+        this.setmAgility(mAgility + 2);
 
-        // increase attack and defense depending on character
-        if (this.getName().equals("Dora")) {
+        // increase mAttack and mDefense depending on character
+        if (this.getmName().equals("Dora")) {
             // Dora - warrior increase focus on power
-            this.setAttack(attack + 10);
-            this.setMagic(magic + 2);
-            this.setDefense(defense + 8);
-            this.setDamage(damage + 5);
-            this.setMagicDamage(magicDamage + 3);
-        } else if (this.getName().equals("Boots")) {
-            // Boots - mage increase focus on magic
-            this.setAttack(attack + 3);
-            this.setMagic(magic + 10);
-            this.setDefense(defense + 3);
-            this.setDamage(damage + 3);
-            this.setMagicDamage(magicDamage + 5);
+            this.setmAttack(mAttack + 10);
+            this.setmMagic(mMagic + 2);
+            this.setmDefense(mDefense + 8);
+            this.setmDamage(mDamage + 5);
+            this.setmMagicDamage(mMagicDamage + 3);
+        } else if (this.getmName().equals("Boots")) {
+            // Boots - mage increase focus on mMagic
+            this.setmAttack(mAttack + 3);
+            this.setmMagic(mMagic + 10);
+            this.setmDefense(mDefense + 3);
+            this.setmDamage(mDamage + 3);
+            this.setmMagicDamage(mMagicDamage + 5);
         }
 
-        //replenish health
-        this.setHealth(this.getMaxHealth());
+        //replenish mHealth
+        this.setmHealth(this.getmMaxHealth());
     }
 }
