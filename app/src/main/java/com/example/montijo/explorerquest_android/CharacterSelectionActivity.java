@@ -20,17 +20,8 @@ public class CharacterSelectionActivity extends AppCompatActivity {
         dora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // create Dora character
-                Character hero = new Character("Dora");
-
-                // create intent to start Story Activity
-                Intent storyIntent = new Intent(CharacterSelectionActivity.this, StoryActivity.class);
-
-                // pass character to activity intent
-                storyIntent.putExtra("Hero", hero);
-
-                // start the new activity
-                startActivity(storyIntent);
+                // call character creation for Dora
+                createCharacter("Dora");
             }
         });
 
@@ -41,18 +32,23 @@ public class CharacterSelectionActivity extends AppCompatActivity {
         boots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // create Boots character
-                Character hero = new Character("Boots");
-
-                // create intent to start Story Activity
-                Intent storyIntent = new Intent(CharacterSelectionActivity.this, StoryActivity.class);
-
-                // pass character to activity intent
-                storyIntent.putExtra("Hero", hero);
-
-                // start the new activity
-                startActivity(storyIntent);
+                // call character creation for Boots
+                createCharacter("Boots");
             }
         });
+    }
+
+    private void createCharacter (String character) {
+        // create chosen character
+        Character hero = new Character(character);
+
+        // create intent to start Story activity
+        Intent storyIntent = new Intent(CharacterSelectionActivity.this, StoryActivity.class);
+
+        // pass character to activity intent
+        storyIntent.putExtra("Hero", hero);
+
+        // start the new activity
+        startActivity(storyIntent);
     }
 }
