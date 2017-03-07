@@ -11,6 +11,8 @@ public class StoryActivity extends AppCompatActivity {
     private Character hero;
     private TextView story;
     private Button next;
+    private int storyPosition = 0;
+    private String[] storyElements = new String[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,23 +25,39 @@ public class StoryActivity extends AppCompatActivity {
         // find story text view
         story = (TextView) findViewById(R.id.text_story);
 
-        // Test code for getting character correctly
-        story.setText("Name: " + hero.getmName() + "\nAgility: " + hero.getmAgility() + "\nMagic damage: "
-                + hero.getmMagicDamage() + "\nMagic: " + hero.getmMagic() + "\nDamage: " +
-                hero.getmDamage() + "\nDefense: " + hero.getmDefense() + "\nAttack: " + hero.getmAttack()
-                + "\nHealth: " + hero.getmHealth()+ "\nMax Health: " + hero.getmMaxHealth());
-
         // find next button
         next = (Button) findViewById(R.id.button_next);
+
+        // initialize story elements array
+        storyElements[0] = getString(R.string.story_intro_1);
+        storyElements[1] = getString(R.string.story_intro_2);
+        storyElements[2] = getString(R.string.story_test);
+
+        // set first story element to story text view
+        story.setText(storyElements[storyPosition]);
 
         // set onClick listener on next button
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Add story advancing code here
+                // call advance story function
+                advanceStory(story.getText().toString());
             }
         });
+    }
 
+    private void advanceStory(String storyElement) {
+        // check story element for combat flag
+        if (storyElement.equals("Combat")) {
+            // TODO add combat activity launch code here
+        } else {
+            // increment story position
+            storyPosition++;
 
+            if (storyPosition < storyElements.length) {
+                // if there are more story elements update story text view
+                story.setText(storyElements[storyPosition]);
+            }
+        }
     }
 }
