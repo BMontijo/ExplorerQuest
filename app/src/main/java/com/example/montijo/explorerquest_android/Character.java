@@ -31,7 +31,9 @@ public class Character implements Serializable {
             this.setmMagicDamage(3);
             this.setmAgility(3);
             this.setmIsAlive(true);
-        } else if (character.equals("Boots")) {
+        }
+
+        if (character.equals("Boots")) {
             // create Boots character - mage
             this.setmName("Boots");
             this.setmHealth(100);
@@ -42,6 +44,48 @@ public class Character implements Serializable {
             this.setmDamage(4);
             this.setmMagicDamage(10);
             this.setmAgility(6);
+            this.setmIsAlive(true);
+        }
+
+        if (character.equals("Map")) {
+            // create Dora character - warrior
+            this.setmName("Map");
+            this.setmHealth(100);
+            this.setmMaxHealth(100);
+            this.setmAttack(10);
+            this.setmMagic(1);
+            this.setmDefense(8);
+            this.setmDamage(10);
+            this.setmMagicDamage(3);
+            this.setmAgility(3);
+            this.setmIsAlive(true);
+        }
+
+        if (character.equals("GrumpyTroll")) {
+            // create Dora character - warrior
+            this.setmName("Grumpy Troll");
+            this.setmHealth(200);
+            this.setmMaxHealth(200);
+            this.setmAttack(15);
+            this.setmMagic(6);
+            this.setmDefense(13);
+            this.setmDamage(15);
+            this.setmMagicDamage(8);
+            this.setmAgility(8);
+            this.setmIsAlive(true);
+        }
+
+        if (character.equals("Swiper")) {
+            // create Dora character - warrior
+            this.setmName("Swiper");
+            this.setmHealth(400);
+            this.setmMaxHealth(400);
+            this.setmAttack(20);
+            this.setmMagic(11);
+            this.setmDefense(13);
+            this.setmDamage(20);
+            this.setmMagicDamage(13);
+            this.setmAgility(13);
             this.setmIsAlive(true);
         }
     }
