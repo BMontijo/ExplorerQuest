@@ -61,7 +61,47 @@
         id="hero" example="Boots">%s</xliff:g> threatens <xliff:g id="enemy" example="Map">%s
         </xliff:g>!</string>
 
+    <!-- Story element 4 - CHARACTER LIMIT - 130 -->
+    <string name="story_adventure_1">After defeating <xliff:g id="enemy" example="Map">%s</xliff:g>
+        , <xliff:g id="hero" example="Boots">%s</xliff:g> finds out that <xliff:g id="enemy" example
+            ="Grumpy">%s</xliff:g> might be involved.\n\nSo <xliff:g id="hero" example="Boots">%s
+        </xliff:g> heads to the bridge.</string>
+
     <!-- Story element 5 - CHARACTER LIMIT - 130 -->
-    <string name="story_adventure_1"></string>
+    <string name="story_adventure_2"><xliff:g id="enemy" example="Grumpy">%s</xliff:g> denies
+        knowing anything about a pie.</string>
+
+    <!-- Story element 6 - CHARACTER LIMIT - 130 -->
+    <string name="story_adventure_3"><xliff:g id="hero" example="Boots">%s</xliff:g> knows that
+        <xliff:g id="enemy" example="Grumpy">%s</xliff:g> is usually difficult to deal with.\n\n
+        <xliff:g id="hero" example="Boots">%s</xliff:g> threatens <xliff:g id="enemy" example=
+            "Grumpy">%s</xliff:g>!</string>
+
+    <!-- Story element 7 - CHARACTER LIMIT - 130 -->
+    <string name="story_finale_1">Defeated, <xliff:g id="enemy" example="Grumpy">%s</xliff:g>,
+        lets slip that <xliff:g id="enemy" example="Swiper">%s</xliff:g> is behind the
+        shenanigans.</string>
+
+    <!-- Story element 8 - CHARACTER LIMIT - 130 -->
+    <string name="story_finale_2"><xliff:g id="hero" example="Boots">%s</xliff:g> heads out towards
+        <xliff:g id="enemy" example="Swiper">%s</xliff:g>'s den.</string>
+
+    <!-- Story element 9 - CHARACTER LIMIT - 130 -->
+    <string name="story_finale_3"><xliff:g id="hero" example="Boots">%s</xliff:g> surprises
+        <xliff:g id="enemy" example="Swiper">%s</xliff:g> with pie in hand.\n\n<xliff:g id="hero" 
+            example="Boots">%s</xliff:g> threatens <xliff:g id="enemy" example="Swiper">%s
+        </xliff:g>!</string>
+    
+    <!-- Story element 10 - CHARACTER LIMIT - 130 -->
+    <string name="story_ending"><xliff:g id="hero" example="Boots">%s</xliff:g> looms over the
+        battered remains of <xliff:g id="enemy" example="Swiper">%s</xliff:g>.\n\n"Nobody messes
+        with Abuela's pie." says <xliff:g id="hero" example="Boots">%s</xliff:g>.</string>
+
+    <!-- Story element 11 - Game Over Screen if hero dies - CHARACTER LIMIT - 130 -->
+    <string name="story_game_over">Our hero has fallen in battle.\n\nGAME OVER</string>
+
+    <!-- Story element 12 - Credits/disclaimer screen at end of game - CHARACTER LIMIT - 130 -->
+    <string name="story_credits">Thank you for playing.\n(c) 2015-2017 Brian Montijo, all rites
+        reserved.\nCharacters (c) Nickelodeon, used without permission.</string>
 
 </resources>
