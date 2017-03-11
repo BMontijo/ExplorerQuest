@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The application mName -->
     <string name="app_name">Explorer Quest - Android</string>
 
@@ -48,14 +48,20 @@
     <string name="tools_enemy_stats_text">Enemy mName\nHealth:</string>
 
     <!-- Story element 1 - CHARACTER LIMIT - 130 -->
-    <string name="story_intro_1">Intro part one</string>
+    <string name="story_intro_1"><xliff:g id="hero" example="Boots">%s</xliff:g> discovers that the
+        pie that Abuela baked for dinner has gone missing.</string>
 
     <!-- Story element 2 - CHARACTER LIMIT - 130 -->
-    <string name="story_intro_2">Intro part two</string>
+    <string name="story_intro_2"><xliff:g id="hero" example="Boots">%s</xliff:g> calls on <xliff:g
+        id="enemy" example="Map">%s</xliff:g> to find out where to go.</string>
 
-    <!-- test string for character length of story text view -->
-    <string name="story_test">ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <!-- Story element 3 - CHARACTER LIMIT - 130 -->
+    <string name="story_intro_3"><xliff:g id="enemy" example="Map">%s</xliff:g> is suspiciously
+        hesitant to guide <xliff:g id="hero" example="Boots">%s</xliff:g>.\n\nFrustrated <xliff:g
+        id="hero" example="Boots">%s</xliff:g> threatens <xliff:g id="enemy" example="Map">%s
+        </xliff:g>!</string>
 
-
+    <!-- Story element 5 - CHARACTER LIMIT - 130 -->
+    <string name="story_adventure_1"></string>
 
 </resources>
