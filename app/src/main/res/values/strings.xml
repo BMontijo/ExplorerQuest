@@ -81,6 +81,6 @@
     <string name="story_game_over">Our hero has fallen in battle.\n\nGAME OVER</string>
 
     <!-- Story element 12 - Credits/disclaimer screen at end of game - CHARACTER LIMIT - 130 -->
-    <string name="story_credits">Thank you for playing.\n(c) 2015-2017 Brian Montijo, all rights reserved.\nCharacters (c) Nickelodeon, used without permission.</string>
+    <string name="story_credits">Thank you for playing.\n\n(c) 2015-2017 Brian Montijo, all rights reserved.\n\nCharacters (c) Nickelodeon, used without permission.</string>
 
 </resources>

@@ -9,11 +9,11 @@ import android.widget.Toast;
 
 public class StoryActivity extends AppCompatActivity {
 
-    private Character hero;
-    private TextView story;
-    private Button next;
+    private Character mHero;
+    private TextView mStory;
+    private Button mNext;
     private int storyPosition = 0;
-    private String[] storyElements = new String[3];
+    private String[] storyElements = new String[12];
     private Character map = new Character("Map");
     private Character grumpyTroll = new Character("GrumpyTroll");
     private Character swiper = new Character("Swiper");
@@ -23,47 +23,56 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
-        // capture hero character
-        hero = (Character) getIntent().getSerializableExtra("Hero");
+        // capture mHero character
+        mHero = (Character) getIntent().getSerializableExtra("Hero");
 
-        // find story text view
-        story = (TextView) findViewById(R.id.text_story);
+        // find mStory text view
+        mStory = (TextView) findViewById(R.id.text_story);
 
         // find next button
-        next = (Button) findViewById(R.id.button_next);
+        mNext = (Button) findViewById(R.id.button_next);
 
-        // initialize story elements array
-        storyElements[0] = getString(R.string.story_intro_1, hero.getmName());
-        storyElements[1] = getString(R.string.story_intro_2, hero.getmName(), map.getmName());
-        storyElements[2] = getString(R.string.story_intro_3, map.getmName(),hero.getmName(),
-                hero.getmName(), map.getmName());
+        // initialize mStory elements array
+        storyElements[0] = getString(R.string.story_intro_1, mHero.getmName());
+        storyElements[1] = getString(R.string.story_intro_2, mHero.getmName(), map.getmName());
+        storyElements[2] = getString(R.string.story_intro_3, map.getmName(), mHero.getmName(), mHero.getmName(), map.getmName());
+        storyElements[3] = getString(R.string.story_adventure_1, map.getmName(), mHero.getmName(), grumpyTroll.getmName(), mHero.getmName());
+        storyElements[4] = getString(R.string.story_adventure_2, grumpyTroll.getmName());
+        storyElements[5] = getString(R.string.story_adventure_3, mHero.getmName(), grumpyTroll.getmName(), mHero.getmName(), grumpyTroll.getmName());
+        storyElements[6] = getString(R.string.story_finale_1, grumpyTroll.getmName(), swiper.getmName());
+        storyElements[7] = getString(R.string.story_finale_2, mHero.getmName(), swiper.getmName());
+        storyElements[8] = getString(R.string.story_finale_3, mHero.getmName(), swiper.getmName(), mHero.getmName(), swiper.getmName());
+        storyElements[9] = getString(R.string.story_ending, mHero.getmName(), swiper.getmName(), mHero.getmName());
+        storyElements[10] = getString(R.string.story_credits);
+        storyElements[11] = getString(R.string.story_game_over);
 
-        // set first story element to story text view
-        story.setText(storyElements[storyPosition]);
+        // set first mStory element to mStory text view
+        mStory.setText(storyElements[storyPosition]);
 
         // set onClick listener on next button
-        next.setOnClickListener(new View.OnClickListener() {
+        mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // call advance story function
-                advanceStory(story.getText().toString());
+                // call advance mStory function
+                advanceStory(storyPosition);
             }
         });
     }
 
-    private void advanceStory(String storyElement) {
-        // check story element for combat flag
-        if (storyElement.contains("threatens")) {
+    private void advanceStory(int lStoryPosition) {
+        // check mStory element for combat flag
+        if (lStoryPosition == 2 || lStoryPosition == 5 || lStoryPosition == 8) {
             // TODO add combat activity launch code here
             // test toast
             Toast.makeText(this, "Combat starts now!", Toast.LENGTH_SHORT).show();
         }
-            // increment story position
-            storyPosition++;
 
-            if (storyPosition < storyElements.length) {
-                // if there are more story elements update story text view
-                story.setText(storyElements[storyPosition]);
-            }
+        // increment mStory position
+        storyPosition++;
+
+        if (storyPosition < storyElements.length) {
+            // if there are more mStory elements update mStory text view
+            mStory.setText(storyElements[storyPosition]);
+        }
     }
 }

@@ -15,7 +15,7 @@
     <string name="story_adventure_2"><xliff:g id="enemy" example="Grumpy">%s</xliff:g> niega saber nada sobre un pastel.</string>
     <string name="story_adventure_3"><xliff:g id="hero" example="Boots">%s</xliff:g> sabe que es difícil a lidar con <xliff:g id="enemy" example="Grumpy">%s</xliff:g>.\n\n<xliff:g id="hero" example="Boots">%s</xliff:g> amenaza <xliff:g id="enemy" example="Grumpy">%s</xliff:g>!</string>
     <string name="story_finale_1">Derrotado, <xliff:g id="enemy" example="Grumpy">%s</xliff:g>, dice que <xliff:g id="enemy" example="Swiper">%s</xliff:g> está detrás de las travesuras.</string>
-    <string name="story_credits">Gracias por jugar. (c) 2015-2017 Brian Montijo, todos los derechos reservados. Personajes (c) Nickelodeon, usado sin permiso.</string>
+    <string name="story_credits">Gracias por jugar.\n\n(c) 2015-2017 Brian Montijo, todos los derechos reservados.\n\nPersonajes (c) Nickelodeon, usado sin permiso.</string>
     <string name="story_finale_2"><xliff:g id="hero" example="Boots">%s</xliff:g> dirige hacia la guarida de <xliff:g id="enemy" example="Swiper">%s</xliff:g>.</string>
     <string name="story_ending"><xliff:g id="hero" example="Boots">%s</xliff:g> sobre los restos maltratado de <xliff:g id="enemy" example="Swiper">%s</xliff:g>.\n\n\"Nadie se mete con el pastel de Abuela.\" dice <xliff:g id="hero" example="Boots">%s</xliff:g>.</string>
     <string name="story_finale_3"><xliff:g id="hero" example="Boots">%s</xliff:g> sorprende a <xliff:g id="enemy" example="Swiper">%s</xliff:g> con el pastel a mano.\n\n<xliff:g id="hero" example="Boots">%s</xliff:g> amenaza <xliff:g id="enemy" example="Swiper">%s</xliff:g>!</string>
