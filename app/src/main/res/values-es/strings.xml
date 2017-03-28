@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Explorer Quest - Android</string>
+    <string name="activity_character_selection">Selección de personaje</string>
+    <string name="activity_combat">Combate</string>
+    <string name="activity_story">Historia</string>
+    <string name="attack_button">Ataque</string>
+    <string name="boots_button">Boots - Mago</string>
+    <string name="character_select">Elija un personaje:</string>
+    <string name="dora_button">Dora - Guerrero</string>
+    <string name="magic_button">Magia</string>
+    <string name="next_button">Siguiente</string>
+    <string name="start_button">Comenzar</string>
+    <string name="story_adventure_1">Después de derrotar <xliff:g id="enemy" example="Map">%s</xliff:g>, <xliff:g id="hero" example="Boots">%s</xliff:g> descubre que <xliff:g id="enemy" example="Grumpy">%s</xliff:g> podría estar involucrado. Pues <xliff:g id="hero" example="Boots">%s</xliff:g> se va al puente.</string>
+    <string name="story_adventure_2"><xliff:g id="enemy" example="Grumpy">%s</xliff:g> niega saber nada sobre un pastel.</string>
+    <string name="story_adventure_3"><xliff:g id="hero" example="Boots">%s</xliff:g> sabe que es difícil a lidar con <xliff:g id="enemy" example="Grumpy">%s</xliff:g>.\n\n<xliff:g id="hero" example="Boots">%s</xliff:g> amenaza <xliff:g id="enemy" example="Grumpy">%s</xliff:g>!</string>
+    <string name="story_finale_1">Derrotado, <xliff:g id="enemy" example="Grumpy">%s</xliff:g>, dice que <xliff:g id="enemy" example="Swiper">%s</xliff:g> está detrás de las travesuras.</string>
+    <string name="story_credits">Gracias por jugar. (c) 2015-2017 Brian Montijo, todos los derechos reservados. Personajes (c) Nickelodeon, usado sin permiso.</string>
+    <string name="story_finale_2"><xliff:g id="hero" example="Boots">%s</xliff:g> dirige hacia la guarida de <xliff:g id="enemy" example="Swiper">%s</xliff:g>.</string>
+    <string name="story_ending"><xliff:g id="hero" example="Boots">%s</xliff:g> sobre los restos maltratado de <xliff:g id="enemy" example="Swiper">%s</xliff:g>.\n\n\"Nadie se mete con el pastel de Abuela.\" dice <xliff:g id="hero" example="Boots">%s</xliff:g>.</string>
+    <string name="story_finale_3"><xliff:g id="hero" example="Boots">%s</xliff:g> sorprende a <xliff:g id="enemy" example="Swiper">%s</xliff:g> con el pastel a mano.\n\n<xliff:g id="hero" example="Boots">%s</xliff:g> amenaza <xliff:g id="enemy" example="Swiper">%s</xliff:g>!</string>
+    <string name="story_game_over">Nuestro héroe ha caído en batalla.\n\nGAME OVER</string>
+    <string name="story_intro_1"><xliff:g id="hero" example="Boots">%s</xliff:g> descubre que el pastel que Abuela horneó para la cena ha desaparecido.</string>
+    <string name="story_intro_2"><xliff:g id="hero" example="Boots">%s</xliff:g> llama a <xliff:g id="enemy" example="Map">%s</xliff:g> para averiguar dónde ir.</string>
+    <string name="story_intro_3"><xliff:g id="enemy" example="Map">%s</xliff:g> es sospechosamente vacilante para guiar a <xliff:g id="hero" example="Boots">%s</xliff:g>.\n\nFrustrado <xliff:g id="hero" example="Boots">%s</xliff:g> amenaza <xliff:g id="enemy" example="Map">%s</xliff:g>!</string>
+</resources>
