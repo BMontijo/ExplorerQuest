@@ -87,15 +87,15 @@
     <string name="combat_start"><xliff:g id="enemy" example="Map">%s</xliff:g> stands before you.</string>
 
     <!-- Combat message showing user attack success - CHARACTER LIMIT - 40 -->
-    <string name="combat_hero_attack_success"></string>
+    <string name="combat_hero_attack_success"><xliff:g id="enemy" example="Map">%s</xliff:g> is hit for <xliff:g id="damage" example="15">%d</xliff:g> damage.</string>
 
     <!-- Combat message showing user attack failed - CHARACTER LIMIT - 40 -->
-    <string name="combat_hero_attack_failed"></string>
+    <string name="combat_hero_attack_failed"><xliff:g id="enemy" example="Map">%s</xliff:g> blocked the attack.</string>
 
     <!-- Combat message showing enemy attack success - CHARACTER LIMIT - 40 -->
-    <string name="combat_enemy_attack_success"></string>
+    <string name="combat_enemy_attack_success"><xliff:g id="hero" example="Boots">%s</xliff:g> is hit for <xliff:g id="damage" example="15">%d</xliff:g> damage.</string>
 
     <!-- Combat message showing enemy attack failed - CHARACTER LIMIT - 40 -->
-    <string name="combat_enemy_attack_failed"></string>
+    <string name="combat_enemy_attack_failed"><xliff:g id="hero" example="Boots">%s</xliff:g> blocked the attack.</string>
 
 </resources>

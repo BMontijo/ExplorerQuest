@@ -77,15 +77,89 @@ public class CombatActivity extends AppCompatActivity {
         // get enemy defense roll
         int aEnemyDefense = enemy.getmDefense() + Dice.rollD6();
 
+        if (aHeroAttack > aEnemyDefense) {
+            // attack successful
+            // roll damage
+            int aHeroDamage = hero.getmDamage() + Dice.rollD6();
 
+            // damage enemy
+            enemy.setmHealth(enemy.getmHealth() - aHeroDamage);
+
+            // update enemy status
+            enemyStatusUpdate();
+
+            // display success message
+            combatText.setText(getString(R.string.combat_hero_attack_success, enemy.getmName(), aHeroDamage));
+        } else {
+            // attack failed
+            // display failure message
+            combatText.setText(getString(R.string.combat_hero_attack_failed, enemy.getmName()));
+        }
     }
 
     private void enemyAttack() {
-        // TODO add enemy attack method here and variety check
+        // variable for enemy attack, damage, and type
+        int aEnemyAttack;
+        int aEnemyDamage;
+        int aEnemyAttackType = Dice.rollD20();
+
+        if (aEnemyAttackType <= 19) {
+            // normal attack and damage
+            aEnemyAttack = enemy.getmAttack() + Dice.rollD6();
+            aEnemyDamage = enemy.getmDamage() + Dice.rollD6();
+        } else {
+            // magic attack and damage
+            aEnemyAttack = enemy.getmMagic() + Dice.rollD6();
+            aEnemyDamage = enemy.getmMagicDamage() + Dice.rollD6();
+        }
+
+        // get hero defense roll
+        int aHeroDefense = hero.getmDefense() + Dice.rollD6();
+
+        if (aEnemyAttack > aHeroDefense) {
+            // attack successful
+            // damage hero
+            hero.setmHealth(hero.getmHealth() - aEnemyDamage);
+
+            // update hero status
+            heroStatusUpdate();
+
+            // display sucess message
+            combatText.append("\n" + getString(R.string.combat_enemy_attack_success, hero.getmName(), aEnemyDamage));
+        } else {
+            // attack failed
+            // display failure message
+            combatText.append("\n" + getString(R.string.combat_enemy_attack_failed, hero.getmName()));
+        }
+
+
     }
 
     private void heroMagic() {
-        // TODO add hero magic attack here
+        // get hero attack roll
+        int aHeroMagic = hero.getmMagic() + Dice.rollD6();
+
+        // get enemy defense roll
+        int aEnemyDefense = enemy.getmDefense() + Dice.rollD6();
+
+        if (aHeroMagic > aEnemyDefense) {
+            // attack successful
+            // roll damage
+            int aHeroMagicDamage = hero.getmMagicDamage() + Dice.rollD6();
+
+            // damage enemy
+            enemy.setmHealth(enemy.getmHealth() - aHeroMagicDamage);
+
+            // update enemy status
+            enemyStatusUpdate();
+
+            // display success message
+            combatText.setText(getString(R.string.combat_hero_attack_success, enemy.getmName(), aHeroMagicDamage));
+        } else {
+            // attack failed
+            // display failure message
+            combatText.setText(getString(R.string.combat_hero_attack_failed, enemy.getmName()));
+        }
     }
 
     private void initiativeCheck() {
