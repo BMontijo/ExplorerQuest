@@ -1,7 +1,8 @@
 package com.example.montijo.explorerquest_android;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -95,6 +96,9 @@ public class CombatActivity extends AppCompatActivity {
             // display failure message
             combatText.setText(getString(R.string.combat_hero_attack_failed, enemy.getmName()));
         }
+
+        // check if character died
+        checkDeath();
     }
 
     private void enemyAttack() {
@@ -132,7 +136,8 @@ public class CombatActivity extends AppCompatActivity {
             combatText.append("\n" + getString(R.string.combat_enemy_attack_failed, hero.getmName()));
         }
 
-
+        // check if character died
+        checkDeath();
     }
 
     private void heroMagic() {
@@ -160,6 +165,9 @@ public class CombatActivity extends AppCompatActivity {
             // display failure message
             combatText.setText(getString(R.string.combat_hero_attack_failed, enemy.getmName()));
         }
+
+        //check if character died
+        checkDeath();
     }
 
     private void initiativeCheck() {
@@ -174,7 +182,49 @@ public class CombatActivity extends AppCompatActivity {
             combatText.setText(getString(R.string.combat_start, enemy.getmName()));
         } else {
             // enemy wins - gets to attack first
+            // set intro combat message
+            combatText.setText(getString(R.string.combat_start_enemy, enemy.getmName()));
+
+            // enemy attacks
             enemyAttack();
+        }
+    }
+
+    private void checkDeath() {
+        // check if hero is dead
+        if (hero.getmHealth() <= 0) {
+            // hero is dead
+            hero.setmIsAlive(false);
+
+            // create intent to go back to story activity
+            Intent storyIntent = new Intent(CombatActivity.this, StoryActivity.class);
+
+            // add updated hero to intent
+            storyIntent.putExtra("updatedHero", hero);
+
+            //  set result
+            setResult(RESULT_OK, storyIntent);
+
+            // close combat
+            finish();
+        }
+
+        // check if enemy is dead
+        if (enemy.getmHealth() <= 0) {
+            // enemy is dead
+            enemy.setmIsAlive(false);
+
+            // create intent to go bakc to story activity
+            Intent storyIntent = new Intent(CombatActivity.this, StoryActivity.class);
+
+            // add updated hero to intent
+            storyIntent.putExtra("updatedHero", hero);
+
+            // set result
+            setResult(RESULT_OK, storyIntent);
+
+            // close combat
+            finish();
         }
     }
 }

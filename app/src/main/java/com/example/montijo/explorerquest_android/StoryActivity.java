@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class StoryActivity extends AppCompatActivity {
 
@@ -86,9 +85,6 @@ public class StoryActivity extends AppCompatActivity {
 
             // start the new activity
             startActivityForResult(combatIntent, COMBAT_RETURN);
-
-            // test toast
-            Toast.makeText(this, "Combat starts now!", Toast.LENGTH_SHORT).show();
         }
 
         // increment story position

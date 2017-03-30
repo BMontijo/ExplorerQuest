@@ -86,6 +86,9 @@
     <!-- Combat message before user gets to attack - CHARACTER LIMIT - 40 -->
     <string name="combat_start"><xliff:g id="enemy" example="Map">%s</xliff:g> stands before you.</string>
 
+    <!-- Combat message showing that enemy attacks first - CHARACTER LIMIT - 40 -->
+    <string name="combat_start_enemy"><xliff:g id="enemy" example="Map">%s</xliff:g> attacks first!</string>
+
     <!-- Combat message showing user attack success - CHARACTER LIMIT - 40 -->
     <string name="combat_hero_attack_success"><xliff:g id="enemy" example="Map">%s</xliff:g> is hit for <xliff:g id="damage" example="15">%d</xliff:g> damage.</string>
 
