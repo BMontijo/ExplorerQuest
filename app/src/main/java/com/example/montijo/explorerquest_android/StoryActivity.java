@@ -85,8 +85,13 @@ public class StoryActivity extends AppCompatActivity {
 
             // start the new activity
             startActivityForResult(combatIntent, COMBAT_RETURN);
+        } else {
+            // not combat situation call next story element
+            nextStory();
         }
+    }
 
+    private void nextStory() {
         // increment story position
         storyPosition++;
 
