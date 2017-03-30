@@ -1,5 +1,6 @@
 package com.example.montijo.explorerquest_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,70 +10,93 @@ import android.widget.Toast;
 
 public class StoryActivity extends AppCompatActivity {
 
-    private Character mHero;
-    private TextView mStory;
-    private Button mNext;
+    private Character hero;
+    private TextView story;
+    private Button next;
     private int storyPosition = 0;
     private String[] storyElements = new String[12];
     private Character map = new Character("Map");
     private Character grumpyTroll = new Character("GrumpyTroll");
     private Character swiper = new Character("Swiper");
 
+    // Combat return ID
+    public static final int COMBAT_RETURN = 444;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
-        // capture mHero character
-        mHero = (Character) getIntent().getSerializableExtra("Hero");
+        // capture hero character
+        hero = (Character) getIntent().getSerializableExtra("Hero");
 
-        // find mStory text view
-        mStory = (TextView) findViewById(R.id.text_story);
+        // find story text view
+        story = (TextView) findViewById(R.id.text_story);
 
         // find next button
-        mNext = (Button) findViewById(R.id.button_next);
+        next = (Button) findViewById(R.id.button_next);
 
-        // initialize mStory elements array
-        storyElements[0] = getString(R.string.story_intro_1, mHero.getmName());
-        storyElements[1] = getString(R.string.story_intro_2, mHero.getmName(), map.getmName());
-        storyElements[2] = getString(R.string.story_intro_3, map.getmName(), mHero.getmName(), mHero.getmName(), map.getmName());
-        storyElements[3] = getString(R.string.story_adventure_1, map.getmName(), mHero.getmName(), grumpyTroll.getmName(), mHero.getmName());
+        // initialize story elements array
+        storyElements[0] = getString(R.string.story_intro_1, hero.getmName());
+        storyElements[1] = getString(R.string.story_intro_2, hero.getmName(), map.getmName());
+        storyElements[2] = getString(R.string.story_intro_3, map.getmName(), hero.getmName(), hero.getmName(), map.getmName());
+        storyElements[3] = getString(R.string.story_adventure_1, map.getmName(), hero.getmName(), grumpyTroll.getmName(), hero.getmName());
         storyElements[4] = getString(R.string.story_adventure_2, grumpyTroll.getmName());
-        storyElements[5] = getString(R.string.story_adventure_3, mHero.getmName(), grumpyTroll.getmName(), mHero.getmName(), grumpyTroll.getmName());
+        storyElements[5] = getString(R.string.story_adventure_3, hero.getmName(), grumpyTroll.getmName(), hero.getmName(), grumpyTroll.getmName());
         storyElements[6] = getString(R.string.story_finale_1, grumpyTroll.getmName(), swiper.getmName());
-        storyElements[7] = getString(R.string.story_finale_2, mHero.getmName(), swiper.getmName());
-        storyElements[8] = getString(R.string.story_finale_3, mHero.getmName(), swiper.getmName(), mHero.getmName(), swiper.getmName());
-        storyElements[9] = getString(R.string.story_ending, mHero.getmName(), swiper.getmName(), mHero.getmName());
+        storyElements[7] = getString(R.string.story_finale_2, hero.getmName(), swiper.getmName());
+        storyElements[8] = getString(R.string.story_finale_3, hero.getmName(), swiper.getmName(), hero.getmName(), swiper.getmName());
+        storyElements[9] = getString(R.string.story_ending, hero.getmName(), swiper.getmName(), hero.getmName());
         storyElements[10] = getString(R.string.story_credits);
         storyElements[11] = getString(R.string.story_game_over);
 
-        // set first mStory element to mStory text view
-        mStory.setText(storyElements[storyPosition]);
+        // set first story element to story text view
+        story.setText(storyElements[storyPosition]);
 
         // set onClick listener on next button
-        mNext.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // call advance mStory function
+                // call advance story function
                 advanceStory(storyPosition);
             }
         });
     }
 
     private void advanceStory(int lStoryPosition) {
-        // check mStory element for combat flag
+        // check story element for combat flag
         if (lStoryPosition == 2 || lStoryPosition == 5 || lStoryPosition == 8) {
-            // TODO add combat activity launch code here
+            // create combat activity intent
+            Intent combatIntent = new Intent(StoryActivity.this, CombatActivity.class);
+
+            // pass hero to intent
+            combatIntent.putExtra("hero", hero);
+
+            // check lStoryPosition to pass proper enemy
+            if (lStoryPosition == 2) {
+                // pass Map enemy to intent
+                combatIntent.putExtra("enemy", map);
+            } else if (lStoryPosition == 5) {
+                // pass Grumpy Troll to intent
+                combatIntent.putExtra("enemy", grumpyTroll);
+            } else {
+                // pass Swiper to intent
+                combatIntent.putExtra("enemy", swiper);
+            }
+
+            // start the new activity
+            startActivityForResult(combatIntent, COMBAT_RETURN);
+
             // test toast
             Toast.makeText(this, "Combat starts now!", Toast.LENGTH_SHORT).show();
         }
 
-        // increment mStory position
+        // increment story position
         storyPosition++;
 
         if (storyPosition < storyElements.length) {
-            // if there are more mStory elements update mStory text view
-            mStory.setText(storyElements[storyPosition]);
+            // if there are more story elements update story text view
+            story.setText(storyElements[storyPosition]);
         }
     }
 }

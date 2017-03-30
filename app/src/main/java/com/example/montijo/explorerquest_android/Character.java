@@ -48,7 +48,7 @@ public class Character implements Serializable {
         }
 
         if (character.equals("Map")) {
-            // create Dora character - warrior
+            // create Map character - enemy
             this.setmName("Map");
             this.setmHealth(100);
             this.setmMaxHealth(100);
@@ -62,7 +62,7 @@ public class Character implements Serializable {
         }
 
         if (character.equals("GrumpyTroll")) {
-            // create Dora character - warrior
+            // create Grumpy Troll character - enemy
             this.setmName("Grumpy Troll");
             this.setmHealth(200);
             this.setmMaxHealth(200);
@@ -76,7 +76,7 @@ public class Character implements Serializable {
         }
 
         if (character.equals("Swiper")) {
-            // create Dora character - warrior
+            // create Swiper character - enemy
             this.setmName("Swiper");
             this.setmHealth(400);
             this.setmMaxHealth(400);

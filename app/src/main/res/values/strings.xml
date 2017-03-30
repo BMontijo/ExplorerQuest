@@ -83,4 +83,19 @@
     <!-- Story element 12 - Credits/disclaimer screen at end of game - CHARACTER LIMIT - 130 -->
     <string name="story_credits">Thank you for playing.\n\n(c) 2015-2017 Brian Montijo, all rights reserved.\n\nCharacters (c) Nickelodeon, used without permission.</string>
 
+    <!-- Combat message before user gets to attack - CHARACTER LIMIT - 40 -->
+    <string name="combat_start"><xliff:g id="enemy" example="Map">%s</xliff:g> stands before you.</string>
+
+    <!-- Combat message showing user attack success - CHARACTER LIMIT - 40 -->
+    <string name="combat_hero_attack_success"></string>
+
+    <!-- Combat message showing user attack failed - CHARACTER LIMIT - 40 -->
+    <string name="combat_hero_attack_failed"></string>
+
+    <!-- Combat message showing enemy attack success - CHARACTER LIMIT - 40 -->
+    <string name="combat_enemy_attack_success"></string>
+
+    <!-- Combat message showing enemy attack failed - CHARACTER LIMIT - 40 -->
+    <string name="combat_enemy_attack_failed"></string>
+
 </resources>
