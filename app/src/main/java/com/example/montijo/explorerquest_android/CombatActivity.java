@@ -13,8 +13,6 @@ public class CombatActivity extends AppCompatActivity {
     private TextView combatText;
     private TextView heroStatus;
     private TextView enemyStatus;
-    private Button attack;
-    private Button magic;
 
     // variables for characters
     private Character hero;
@@ -29,8 +27,8 @@ public class CombatActivity extends AppCompatActivity {
         combatText = (TextView) findViewById(R.id.text_combat);
         heroStatus = (TextView) findViewById(R.id.text_hero_stats);
         enemyStatus = (TextView)findViewById(R.id.text_enemy_stats);
-        attack = (Button) findViewById(R.id.button_attack);
-        magic = (Button)findViewById(R.id.buton_magic);
+        Button attack = (Button) findViewById(R.id.button_attack);
+        Button magic = (Button) findViewById(R.id.buton_magic);
 
         // capture characters
         hero = (Character) getIntent().getSerializableExtra("hero");
@@ -129,11 +127,11 @@ public class CombatActivity extends AppCompatActivity {
             heroStatusUpdate();
 
             // display sucess message
-            combatText.append("\n" + getString(R.string.combat_enemy_attack_success, hero.getmName(), aEnemyDamage));
+            combatText.append("\n\n" + getString(R.string.combat_enemy_attack_success, hero.getmName(), aEnemyDamage));
         } else {
             // attack failed
             // display failure message
-            combatText.append("\n" + getString(R.string.combat_enemy_attack_failed, hero.getmName()));
+            combatText.append("\n\n" + getString(R.string.combat_enemy_attack_failed, hero.getmName()));
         }
 
         // check if character died
