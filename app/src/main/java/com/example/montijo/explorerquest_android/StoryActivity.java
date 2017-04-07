@@ -17,6 +17,7 @@ public class StoryActivity extends AppCompatActivity {
     private Character map = new Character("Map");
     private Character grumpyTroll = new Character("GrumpyTroll");
     private Character swiper = new Character("Swiper");
+    private boolean combat = false;
 
     // Combat return ID
     public static final int COMBAT_RETURN = 444;
@@ -51,6 +52,9 @@ public class StoryActivity extends AppCompatActivity {
 
         // set first story element to story text view
         story.setText(storyElements[storyPosition]);
+
+        //increment story position
+        storyPosition++;
 
         // set onClick listener on next button
         next.setOnClickListener(new View.OnClickListener() {
@@ -92,12 +96,56 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     private void nextStory() {
-        // increment story position
-        storyPosition++;
-
         if (storyPosition < storyElements.length) {
             // if there are more story elements update story text view
             story.setText(storyElements[storyPosition]);
+        }
+
+        // increment story position
+        storyPosition++;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // ensure processing proper results
+        if (resultCode == RESULT_OK && requestCode == COMBAT_RETURN) {
+            // grab the updated character
+            Bundle results = data.getExtras();
+
+            // assign updated character to variable
+            hero = (Character) results.getSerializable("updatedHero");
+
+            // assert that hero is not null
+            assert hero != null;
+
+            // check to see if hero is alive
+            if (hero.ismIsAlive()) {
+                //gather pre-level stats
+                int preHealth = hero.getmMaxHealth();
+                int preAttack = hero.getmAttack();
+                int preMagic = hero.getmMagic();
+                int preDefense = hero.getmDefense();
+                int preDamage = hero.getmDamage();
+                int preMagicDamage = hero.getmMagicDamage();
+                int preAgility = hero.getmAgility();
+
+                // level up
+                hero.levelUp();
+
+                // display level up message
+                story.setText(getString(R.string.story_level_up, hero.getmName(), preHealth, hero.getmMaxHealth(), preAttack, hero.getmAttack(), preMagic, hero.getmMagic(), preDefense, hero.getmDefense(), preDamage, hero.getmDamage(), preMagicDamage, hero.getmMagicDamage(), preAgility, hero.getmAgility()));
+            } else {
+                // advance story position to end/game over screen
+                storyPosition = 11;
+
+                // update story text to display game over screen
+                story.setText(storyElements[storyPosition]);
+
+                // disable next button
+                next.setEnabled(false);
+            }
         }
     }
 }
