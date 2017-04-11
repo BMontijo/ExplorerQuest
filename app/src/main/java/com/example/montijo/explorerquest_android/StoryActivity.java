@@ -17,7 +17,7 @@ public class StoryActivity extends AppCompatActivity {
     private Character map = new Character("Map");
     private Character grumpyTroll = new Character("GrumpyTroll");
     private Character swiper = new Character("Swiper");
-    private boolean combat = false;
+    private boolean combat;
 
     // Combat return ID
     public static final int COMBAT_RETURN = 444;
@@ -36,6 +36,9 @@ public class StoryActivity extends AppCompatActivity {
         // find next button
         next = (Button) findViewById(R.id.button_next);
 
+        // set combat flag to false
+        combat = false;
+
         // initialize story elements array
         storyElements[0] = getString(R.string.story_intro_1, hero.getmName());
         storyElements[1] = getString(R.string.story_intro_2, hero.getmName(), map.getmName());
@@ -53,56 +56,60 @@ public class StoryActivity extends AppCompatActivity {
         // set first story element to story text view
         story.setText(storyElements[storyPosition]);
 
-        //increment story position
-        storyPosition++;
-
         // set onClick listener on next button
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // call advance story function
-                advanceStory(storyPosition);
+                advanceStory();
             }
         });
     }
 
-    private void advanceStory(int lStoryPosition) {
-        // check story element for combat flag
-        if (lStoryPosition == 2 || lStoryPosition == 5 || lStoryPosition == 8) {
+    private void advanceStory() {
+        // check combat flag
+        if (combat == true) {
             // create combat activity intent
             Intent combatIntent = new Intent(StoryActivity.this, CombatActivity.class);
 
             // pass hero to intent
             combatIntent.putExtra("hero", hero);
 
-            // check lStoryPosition to pass proper enemy
-            if (lStoryPosition == 2) {
+            // check storyPosition to pass proper enemy
+            if (storyPosition == 2) {
                 // pass Map enemy to intent
                 combatIntent.putExtra("enemy", map);
-            } else if (lStoryPosition == 5) {
+            } else if (storyPosition == 5) {
                 // pass Grumpy Troll to intent
                 combatIntent.putExtra("enemy", grumpyTroll);
-            } else {
+            } else if (storyPosition == 8){
                 // pass Swiper to intent
                 combatIntent.putExtra("enemy", swiper);
             }
 
             // start the new activity
             startActivityForResult(combatIntent, COMBAT_RETURN);
+
+            // reset combat flag
+            combat = false;
         } else {
-            // not combat situation call next story element
             nextStory();
         }
     }
 
     private void nextStory() {
+        // increment story position
+        storyPosition++;
+
+        // check if combat position, set combat flag
+        if (storyPosition == 2 || storyPosition ==5 || storyPosition == 8) {
+            combat = true;
+        }
+
         if (storyPosition < storyElements.length) {
             // if there are more story elements update story text view
             story.setText(storyElements[storyPosition]);
         }
-
-        // increment story position
-        storyPosition++;
     }
 
     @Override
@@ -136,6 +143,7 @@ public class StoryActivity extends AppCompatActivity {
 
                 // display level up message
                 story.setText(getString(R.string.story_level_up, hero.getmName(), preHealth, hero.getmMaxHealth(), preAttack, hero.getmAttack(), preMagic, hero.getmMagic(), preDefense, hero.getmDefense(), preDamage, hero.getmDamage(), preMagicDamage, hero.getmMagicDamage(), preAgility, hero.getmAgility()));
+
             } else {
                 // advance story position to end/game over screen
                 storyPosition = 11;
