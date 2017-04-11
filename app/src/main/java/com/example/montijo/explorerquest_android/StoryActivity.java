@@ -107,6 +107,10 @@ public class StoryActivity extends AppCompatActivity {
         }
 
         if (storyPosition < storyElements.length) {
+            if (storyPosition == 10) {
+                // arrived at credit screen disable next button
+                next.setEnabled(false);
+            }
             // if there are more story elements update story text view
             story.setText(storyElements[storyPosition]);
         }
