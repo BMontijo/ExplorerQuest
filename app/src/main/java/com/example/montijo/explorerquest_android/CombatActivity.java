@@ -105,7 +105,7 @@ public class CombatActivity extends AppCompatActivity {
         int aEnemyDamage;
         int aEnemyAttackType = Dice.rollD20();
 
-        if (aEnemyAttackType <= 19) {
+        if (aEnemyAttackType <= 18) {
             // normal attack and damage
             aEnemyAttack = enemy.getmAttack() + Dice.rollD6();
             aEnemyDamage = enemy.getmDamage() + Dice.rollD6();

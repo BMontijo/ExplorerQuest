@@ -25,7 +25,7 @@ public class Character implements Serializable {
             this.setmHealth(100);
             this.setmMaxHealth(100);
             this.setmAttack(10);
-            this.setmMagic(1);
+            this.setmMagic(2);
             this.setmDefense(8);
             this.setmDamage(10);
             this.setmMagicDamage(3);
@@ -38,9 +38,9 @@ public class Character implements Serializable {
             this.setmName("Boots");
             this.setmHealth(100);
             this.setmMaxHealth(100);
-            this.setmAttack(3);
+            this.setmAttack(4);
             this.setmMagic(10);
-            this.setmDefense(5);
+            this.setmDefense(7);
             this.setmDamage(4);
             this.setmMagicDamage(10);
             this.setmAgility(6);
@@ -66,9 +66,9 @@ public class Character implements Serializable {
             this.setmName("Grumpy Troll");
             this.setmHealth(200);
             this.setmMaxHealth(200);
-            this.setmAttack(15);
+            this.setmAttack(20);
             this.setmMagic(6);
-            this.setmDefense(13);
+            this.setmDefense(19);
             this.setmDamage(15);
             this.setmMagicDamage(8);
             this.setmAgility(8);
@@ -80,9 +80,9 @@ public class Character implements Serializable {
             this.setmName("Swiper");
             this.setmHealth(400);
             this.setmMaxHealth(400);
-            this.setmAttack(20);
+            this.setmAttack(30);
             this.setmMagic(11);
-            this.setmDefense(13);
+            this.setmDefense(30);
             this.setmDamage(20);
             this.setmMagicDamage(13);
             this.setmAgility(13);
@@ -90,87 +90,87 @@ public class Character implements Serializable {
         }
     }
 
-    public String getmName() {
+    String getmName() {
         return mName;
     }
 
-    public void setmName(String mName) {
+    private void setmName(String mName) {
         this.mName = mName;
     }
 
-    public int getmMagicDamage() {
+    int getmMagicDamage() {
         return mMagicDamage;
     }
 
-    public void setmMagicDamage(int mMagicDamage) {
+    private void setmMagicDamage(int mMagicDamage) {
         this.mMagicDamage = mMagicDamage;
     }
 
-    public int getmAttack() {
+    int getmAttack() {
         return mAttack;
     }
 
-    public void setmAttack(int mAttack) {
+    private void setmAttack(int mAttack) {
         this.mAttack = mAttack;
     }
 
-    public int getmMagic() {
+    int getmMagic() {
         return mMagic;
     }
 
-    public void setmMagic(int mMagic) {
+    private void setmMagic(int mMagic) {
         this.mMagic = mMagic;
     }
 
-    public int getmDefense() {
+    int getmDefense() {
         return mDefense;
     }
 
-    public void setmDefense(int mDefense) {
+    private void setmDefense(int mDefense) {
         this.mDefense = mDefense;
     }
 
-    public int getmDamage() {
+    int getmDamage() {
         return mDamage;
     }
 
-    public void setmDamage(int mDamage) {
+    private void setmDamage(int mDamage) {
         this.mDamage = mDamage;
     }
 
-    public int getmAgility() {
+    int getmAgility() {
         return mAgility;
     }
 
-    public void setmAgility(int mAgility) {
+    private void setmAgility(int mAgility) {
         this.mAgility = mAgility;
     }
 
-    public boolean ismIsAlive() {
+    boolean ismIsAlive() {
         return mIsAlive;
     }
 
-    public void setmIsAlive(boolean mIsAlive) {
+    void setmIsAlive(boolean mIsAlive) {
         this.mIsAlive = mIsAlive;
     }
 
-    public int getmHealth() {
+    int getmHealth() {
         return mHealth;
     }
 
-    public void setmHealth(int mHealth) {
+    void setmHealth(int mHealth) {
         this.mHealth = mHealth;
     }
 
-    public int getmMaxHealth() {
+    int getmMaxHealth() {
         return mMaxHealth;
     }
 
-    public void setmMaxHealth(int mMaxHealth) {
+    private void setmMaxHealth(int mMaxHealth) {
         this.mMaxHealth = mMaxHealth;
     }
 
-    public void levelUp() {
+    void levelUp() {
         // increase character stats
         this.setmMaxHealth(this.getmMaxHealth() + this.getmMaxHealth());
         this.setmAgility(mAgility + 2);
@@ -187,7 +187,7 @@ public class Character implements Serializable {
             // Boots - mage increase focus on mMagic
             this.setmAttack(mAttack + 3);
             this.setmMagic(mMagic + 10);
-            this.setmDefense(mDefense + 3);
+            this.setmDefense(mDefense + 5);
             this.setmDamage(mDamage + 3);
             this.setmMagicDamage(mMagicDamage + 5);
         }
