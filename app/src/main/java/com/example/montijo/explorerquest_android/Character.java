@@ -2,9 +2,7 @@ package com.example.montijo.explorerquest_android;
 
 import java.io.Serializable;
 
-/**
- * Created by Brian on 2/26/2017.
- */
+// Created by Brian on 2/26/2017
 
 public class Character implements Serializable {
     private String mName;
@@ -68,10 +66,10 @@ public class Character implements Serializable {
             this.setmMaxHealth(200);
             this.setmAttack(20);
             this.setmMagic(6);
-            this.setmDefense(19);
+            this.setmDefense(17);
             this.setmDamage(15);
             this.setmMagicDamage(8);
-            this.setmAgility(8);
+            this.setmAgility(6);
             this.setmIsAlive(true);
         }
 
@@ -82,10 +80,10 @@ public class Character implements Serializable {
             this.setmMaxHealth(400);
             this.setmAttack(30);
             this.setmMagic(11);
-            this.setmDefense(30);
+            this.setmDefense(25);
             this.setmDamage(20);
             this.setmMagicDamage(13);
-            this.setmAgility(13);
+            this.setmAgility(8);
             this.setmIsAlive(true);
         }
     }
