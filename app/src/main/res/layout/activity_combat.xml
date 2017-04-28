@@ -49,6 +49,7 @@
 
         <Button
             android:id="@+id/button_attack"
+            android:background="@color/colorAccent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,6 +61,7 @@
 
         <Button
             android:id="@+id/buton_magic"
+            android:background="@color/colorAccent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
