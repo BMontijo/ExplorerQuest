@@ -53,7 +53,7 @@ public class Character implements Serializable {
             this.setmAttack(10);
             this.setmMagic(1);
             this.setmDefense(8);
-            this.setmDamage(10);
+            this.setmDamage(7);
             this.setmMagicDamage(3);
             this.setmAgility(3);
             this.setmIsAlive(true);
@@ -67,7 +67,7 @@ public class Character implements Serializable {
             this.setmAttack(20);
             this.setmMagic(6);
             this.setmDefense(17);
-            this.setmDamage(15);
+            this.setmDamage(12);
             this.setmMagicDamage(8);
             this.setmAgility(6);
             this.setmIsAlive(true);
@@ -81,7 +81,7 @@ public class Character implements Serializable {
             this.setmAttack(30);
             this.setmMagic(11);
             this.setmDefense(25);
-            this.setmDamage(20);
+            this.setmDamage(18);
             this.setmMagicDamage(13);
             this.setmAgility(8);
             this.setmIsAlive(true);
