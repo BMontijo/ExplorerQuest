@@ -37,6 +37,9 @@
 
     <!-- Magic button text -->
     <string name="magic_button">Magic</string>
+	
+	<!-- Health hit points label -->
+	<string name="hp_label">HP</string>
 
     <!-- Tools text for combat activity, dev use only -->
     <string name="tools_combat_text" translatable="false">Combat actions and result shown here.</string>

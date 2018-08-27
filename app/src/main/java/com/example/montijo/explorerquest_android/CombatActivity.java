@@ -61,12 +61,12 @@ public class CombatActivity extends AppCompatActivity {
 
     private void heroStatusUpdate() {
         // update the hero status view with updated info
-        heroStatus.setText(hero.getmName() + "\n" + hero.getmHealth() + "/" + hero.getmMaxHealth());
+        heroStatus.setText(hero.getmName() + "\n" + getString(R.string.hp_label) + "\n" + hero.getmHealth() + "/" + hero.getmMaxHealth());
     }
 
     private void enemyStatusUpdate() {
         // update the enemy status view with updated info
-        enemyStatus.setText(enemy.getmName() + "\n" + enemy.getmHealth() + "/" + enemy.getmMaxHealth());
+        enemyStatus.setText(enemy.getmName() + "\n" + getString(R.string.hp_label) + "\n" + enemy.getmHealth() + "/" + enemy.getmMaxHealth());
     }
 
     private void heroAttack() {
