@@ -11,8 +11,8 @@ public class CombatActivity extends AppCompatActivity {
 
     // variables for activity views
     private TextView combatText;
-    private TextView heroStatus;
-    private TextView enemyStatus;
+    private TextView heroHealth;
+    private TextView enemyHealth;
 
     // variables for characters
     private Character hero;
@@ -25,8 +25,12 @@ public class CombatActivity extends AppCompatActivity {
 
         // find views
         combatText = (TextView) findViewById(R.id.text_combat);
-        heroStatus = (TextView) findViewById(R.id.text_hero_stats);
-        enemyStatus = (TextView)findViewById(R.id.text_enemy_stats);
+		TextView heroName = (TextView) findViewById(R.id.text_hero_name);
+        heroHealth = (TextView) findViewById(R.id.text_hero_health);
+		TextView heroMaxHealth = (TextView) findViewById(R.id.text_hero_max_health);
+		TextView enemyName = (TextView) findViewById(R.id.text_enemy_name);
+        enemyHealth = (TextView)findViewById(R.id.text_enemy_health);
+		TextView enemyMaxHealth = (TextView) findViewById(R.id.text_enemy_max_health);
         Button attack = (Button) findViewById(R.id.button_attack);
         Button magic = (Button) findViewById(R.id.buton_magic);
 
@@ -34,9 +38,13 @@ public class CombatActivity extends AppCompatActivity {
         hero = (Character) getIntent().getSerializableExtra("hero");
         enemy = (Character) getIntent().getSerializableExtra("enemy");
 
-        // set up hero and enemy status views
-        heroStatusUpdate();
-        enemyStatusUpdate();
+        // populate hero and enemy status area
+		heroName.setText(hero.getmName());
+		heroHealth.setText(hero.getmHealth());
+		heroMaxHealth.setText("/" + hero.getmMaxHealth());
+		enemyName.setText(enemy.getmName());
+		enemyHealth.setText(enemy.getmHealth());
+		enemyMaxHealth.setText("/" + enemy.getmMaxHealth());
 
         // onClick listeners for buttons
         attack.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +68,13 @@ public class CombatActivity extends AppCompatActivity {
     }
 
     private void heroStatusUpdate() {
-        // update the hero status view with updated info
-        heroStatus.setText(hero.getmName() + "\n" + getString(R.string.hp_label) + "\n" + hero.getmHealth() + "/" + hero.getmMaxHealth());
+        // update the hero health view with updated info
+        heroHealth.setText(hero.getmHealth());
     }
 
     private void enemyStatusUpdate() {
         // update the enemy status view with updated info
-        enemyStatus.setText(enemy.getmName() + "\n" + getString(R.string.hp_label) + "\n" + enemy.getmHealth() + "/" + enemy.getmMaxHealth());
+        enemyHealth.setText(enemy.getmHealth());
     }
 
     private void heroAttack() {
