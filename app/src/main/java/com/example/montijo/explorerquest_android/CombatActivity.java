@@ -3,6 +3,7 @@ package com.example.montijo.explorerquest_android;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,13 +25,15 @@ public class CombatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_combat);
 
         // find views
+        View heroStats = findViewById(R.id.hero_stats);
+        View enemyStats = findViewById(R.id.enemy_stats);
         combatText = (TextView) findViewById(R.id.text_combat);
-		TextView heroName = (TextView) findViewById(R.id.text_hero_name);
-        heroHealth = (TextView) findViewById(R.id.text_hero_health);
-		TextView heroMaxHealth = (TextView) findViewById(R.id.text_hero_max_health);
-		TextView enemyName = (TextView) findViewById(R.id.text_enemy_name);
-        enemyHealth = (TextView)findViewById(R.id.text_enemy_health);
-		TextView enemyMaxHealth = (TextView) findViewById(R.id.text_enemy_max_health);
+		TextView heroName = (TextView) heroStats.findViewById(R.id.text_name);
+        heroHealth = (TextView) heroStats.findViewById(R.id.text_health);
+		TextView heroMaxHealth = (TextView) heroStats.findViewById(R.id.text_max_health);
+		TextView enemyName = (TextView) enemyStats.findViewById(R.id.text_name);
+        enemyHealth = (TextView) enemyStats.findViewById(R.id.text_health);
+		TextView enemyMaxHealth = (TextView) enemyStats.findViewById(R.id.text_max_health);
         Button attack = (Button) findViewById(R.id.button_attack);
         Button magic = (Button) findViewById(R.id.buton_magic);
 
