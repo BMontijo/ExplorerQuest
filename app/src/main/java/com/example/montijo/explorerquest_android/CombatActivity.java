@@ -27,10 +27,8 @@ public class CombatActivity extends AppCompatActivity {
         combatText = (TextView) findViewById(R.id.text_combat);
 		TextView heroName = (TextView) findViewById(R.id.text_hero_name);
         heroHealth = (TextView) findViewById(R.id.text_hero_health);
-		TextView heroMaxHealth = (TextView) findViewById(R.id.text_hero_max_health);
 		TextView enemyName = (TextView) findViewById(R.id.text_enemy_name);
         enemyHealth = (TextView)findViewById(R.id.text_enemy_health);
-		TextView enemyMaxHealth = (TextView) findViewById(R.id.text_enemy_max_health);
         Button attack = (Button) findViewById(R.id.button_attack);
         Button magic = (Button) findViewById(R.id.buton_magic);
 
@@ -40,11 +38,9 @@ public class CombatActivity extends AppCompatActivity {
 
         // populate hero and enemy status area
 		heroName.setText(hero.getmName());
-		heroHealth.setText(hero.getmHealth());
-		heroMaxHealth.setText("/" + hero.getmMaxHealth());
+		heroHealth.setText(getString(R.string.combat_health_display,hero.getmHealth(),hero.getmMaxHealth()));
 		enemyName.setText(enemy.getmName());
-		enemyHealth.setText(enemy.getmHealth());
-		enemyMaxHealth.setText("/" + enemy.getmMaxHealth());
+		enemyHealth.setText(getString(R.string.combat_health_display,enemy.getmHealth(),enemy.getmMaxHealth()));
 
         // onClick listeners for buttons
         attack.setOnClickListener(new View.OnClickListener() {
@@ -69,12 +65,12 @@ public class CombatActivity extends AppCompatActivity {
 
     private void heroStatusUpdate() {
         // update the hero health view with updated info
-        heroHealth.setText(hero.getmHealth());
+        heroHealth.setText(getString(R.string.combat_health_display,hero.getmHealth(),hero.getmMaxHealth()));
     }
 
     private void enemyStatusUpdate() {
         // update the enemy status view with updated info
-        enemyHealth.setText(enemy.getmHealth());
+        enemyHealth.setText(getString(R.string.combat_health_display,enemy.getmHealth(),enemy.getmMaxHealth()));
     }
 
     private void heroAttack() {

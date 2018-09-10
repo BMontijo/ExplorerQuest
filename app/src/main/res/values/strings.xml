@@ -107,4 +107,7 @@
     <!-- Level up message - displays new stats after level up - CHARACTER LIMIT - 130 -->
     <string name="story_level_up"><xliff:g id="hero" example="Boots">%s</xliff:g> has leveled up!\nHealth: <xliff:g id="pre_health" example="0">%d</xliff:g> -> <xliff:g id="post_health" example="1">%d</xliff:g>\nAttack: <xliff:g id="pre_attack" example="0">%d</xliff:g> -> <xliff:g id="post_attack" example="1">%d</xliff:g>\nMagic: <xliff:g id="pre_magic" example="0">%d</xliff:g> -> <xliff:g id="post_magic" example="1">%d</xliff:g>\nDefense: <xliff:g id="pre_defense" example="0">%d</xliff:g> -> <xliff:g id="post_defense" example="1">%d</xliff:g>\nDamage: <xliff:g id="pre_damage" example="0">%d</xliff:g> -> <xliff:g id="post_damage" example="1">%d</xliff:g>\nMagic Damage: <xliff:g id="pre_magic_defense" example="0">%d</xliff:g> -> <xliff:g id="post_magic_defense" example="1">%d</xliff:g>\nAgility: <xliff:g id="pre_agility" example="0">%d</xliff:g> -> <xliff:g id="post_agility" example="1">%d</xliff:g>\n</string>
 
+    <!-- Health display -->
+    <string name="combat_health_display"><xliff:g id="health" example="100">%d</xliff:g>/<xliff:g id="maxHealth" example="100">%d</xliff:g></string>
+
 </resources>
