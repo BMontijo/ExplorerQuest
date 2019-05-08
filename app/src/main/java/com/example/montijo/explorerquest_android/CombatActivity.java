@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class CombatActivity extends AppCompatActivity {
+    // MediaPlayer
+    //MediaPlayer mMp;
 
     // variables for activity views
     private TextView combatText;
@@ -22,6 +24,8 @@ public class CombatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_combat);
+
+        //TODO mediaPlayer start music
 
         // find views
         combatText = (TextView) findViewById(R.id.text_combat);
@@ -228,5 +232,12 @@ public class CombatActivity extends AppCompatActivity {
             // close combat
             finish();
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        //TODO stop mediaPlayer
     }
 }
