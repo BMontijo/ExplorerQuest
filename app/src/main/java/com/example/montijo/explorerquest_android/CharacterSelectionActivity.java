@@ -7,11 +7,16 @@ import android.view.View;
 import android.widget.Button;
 
 public class CharacterSelectionActivity extends AppCompatActivity {
+    // MediaPlayer
+    //mediaPlayer mMp;
 
+    //TODO mediaPlayer onComplete Listener loop
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_selection);
+
+        //TODO mediaPlayer start music
 
         // find Dora button
         Button dora = (Button) findViewById(R.id.button_dora);
@@ -42,6 +47,8 @@ public class CharacterSelectionActivity extends AppCompatActivity {
         // create chosen character
         Character hero = new Character(character);
 
+        //TODO stop mediaPlayer
+
         // create intent to start Story activity
         Intent storyIntent = new Intent(CharacterSelectionActivity.this, StoryActivity.class);
 
@@ -50,5 +57,12 @@ public class CharacterSelectionActivity extends AppCompatActivity {
 
         // start the new activity
         startActivity(storyIntent);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        //TODO stop mediaPlayer
     }
 }
