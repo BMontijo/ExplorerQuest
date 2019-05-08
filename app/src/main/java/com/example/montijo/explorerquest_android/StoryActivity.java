@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class StoryActivity extends AppCompatActivity {
+    // Media Player
+    //mediaPlayer mMp;
 
     private Character hero;
     private TextView story;
@@ -26,6 +28,8 @@ public class StoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
+
+        //TODO mediaPlayer start music
 
         // capture hero character
         hero = (Character) getIntent().getSerializableExtra("Hero");
@@ -71,6 +75,8 @@ public class StoryActivity extends AppCompatActivity {
         if (combat == true) {
             // create combat activity intent
             Intent combatIntent = new Intent(StoryActivity.this, CombatActivity.class);
+
+            //TODO stop mediaPlayer
 
             // pass hero to intent
             combatIntent.putExtra("hero", hero);
@@ -145,12 +151,18 @@ public class StoryActivity extends AppCompatActivity {
                 // level up
                 hero.levelUp();
 
+                //TODO mediaPlayer level up sound
+
+                //TODO mediaPlayer start music
+
                 // display level up message
                 story.setText(getString(R.string.story_level_up, hero.getmName(), preHealth, hero.getmMaxHealth(), preAttack, hero.getmAttack(), preMagic, hero.getmMagic(), preDefense, hero.getmDefense(), preDamage, hero.getmDamage(), preMagicDamage, hero.getmMagicDamage(), preAgility, hero.getmAgility()));
 
             } else {
                 // advance story position to end/game over screen
                 storyPosition = 11;
+
+                //TODO mediaPlayer game over music
 
                 // update story text to display game over screen
                 story.setText(storyElements[storyPosition]);
@@ -159,5 +171,12 @@ public class StoryActivity extends AppCompatActivity {
                 next.setEnabled(false);
             }
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        //TODO stop mediaPlayer
     }
 }
