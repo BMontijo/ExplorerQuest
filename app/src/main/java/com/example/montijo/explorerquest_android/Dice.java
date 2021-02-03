@@ -7,6 +7,11 @@ import java.util.Random;
  */
 
 public final class Dice {
+    public static int roll(int sides) {
+        Random dieRoll = new Random();
+        return (dieRoll.nextInt(sides) + 1);
+    }
+
     public static int rollD4() {
         Random diceRoll = new Random();
         return (diceRoll.nextInt(4) + 1);
