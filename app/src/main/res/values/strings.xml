@@ -48,7 +48,13 @@
     <string name="tools_hero_stats_text" translatable="false">Hero mName\nHealth:</string>
 
     <!-- Tools text for enemy stats, dev use only -->
-    <string name="tools_enemy_stats_text" translatable="false">Enemy mName\nHealth:</string>
+    <string name="tools_enemy_stats_text" translatable="false">Enemy mName\nHealth:</string>"
+
+    <!-- Tools text for character names, dev use only -->
+    <string name="tools_name" translatable="false">Name</string>
+
+    <!-- Tools text for HP, dev use only -->
+    <string name="tools_health" translatable="false">100/100</string>
 
     <!-- Story element 1 - CHARACTER LIMIT - 130 -->
     <string name="story_intro_1"><xliff:g id="hero" example="Boots">%s</xliff:g> discovers that the pie that Abuela baked for dinner has gone missing.</string>
