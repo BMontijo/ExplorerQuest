@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.example.montijo.explorerquest_android"                                           
-        minSdkVersion 15
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 28
         versionName "0.9.1K"
