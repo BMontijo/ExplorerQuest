@@ -6,10 +6,10 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class CharacterSelectionActivityNew : AppCompatActivity() {
+class CharacterSelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_character_selection_new)
+        setContentView(R.layout.activity_character_selection)
 
         // find Dora button
         val dora = findViewById<View>(R.id.button_dora) as Button
@@ -33,7 +33,7 @@ class CharacterSelectionActivityNew : AppCompatActivity() {
         val hero = Character(character)
 
         // create intent to start Story activity
-        val storyIntent = Intent(this@CharacterSelectionActivityNew, StoryActivityNew::class.java)
+        val storyIntent = Intent(this@CharacterSelectionActivity, StoryActivity::class.java)
 
         // pass character to activity intent
         storyIntent.putExtra("Hero", hero)

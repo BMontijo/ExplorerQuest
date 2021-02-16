@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class CombatActivityNew : AppCompatActivity() {
+class CombatActivity : AppCompatActivity() {
     // variables for activity views
     private var combatText: TextView? = null
     private var heroHealth: TextView? = null
@@ -27,7 +27,7 @@ class CombatActivityNew : AppCompatActivity() {
         val enemyName = findViewById<View>(R.id.text_enemy_name) as TextView
         enemyHealth = findViewById<View>(R.id.text_enemy_health) as TextView
         val attack = findViewById<View>(R.id.button_attack) as Button
-        val magic = findViewById<View>(R.id.buton_magic) as Button
+        val magic = findViewById<View>(R.id.button_magic) as Button
 
         // capture characters
         hero = intent.getSerializableExtra("hero") as Character?
@@ -193,7 +193,7 @@ class CombatActivityNew : AppCompatActivity() {
             hero!!.setmIsAlive(false)
 
             // create intent to go back to story activity
-            val storyIntent = Intent(this@CombatActivityNew, StoryActivityNew::class.java)
+            val storyIntent = Intent(this@CombatActivity, StoryActivity::class.java)
 
             // add updated hero to intent
             storyIntent.putExtra("updatedHero", hero)
@@ -211,7 +211,7 @@ class CombatActivityNew : AppCompatActivity() {
             enemy!!.setmIsAlive(false)
 
             // create intent to go bakc to story activity
-            val storyIntent = Intent(this@CombatActivityNew, StoryActivityNew::class.java)
+            val storyIntent = Intent(this@CombatActivity, StoryActivity::class.java)
 
             // add updated hero to intent
             storyIntent.putExtra("updatedHero", hero)

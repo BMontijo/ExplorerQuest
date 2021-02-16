@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class StoryActivityNew : AppCompatActivity() {
+class StoryActivity : AppCompatActivity() {
     private var hero: Character? = null
     private var story: TextView? = null
     private var next: Button? = null
@@ -60,7 +60,7 @@ class StoryActivityNew : AppCompatActivity() {
         // check combat flag
         if (combat == true) {
             // create combat activity intent
-            val combatIntent = Intent(this@StoryActivityNew, CombatActivity::class.java)
+            val combatIntent = Intent(this@StoryActivity, CombatActivity::class.java)
 
             // pass hero to intent
             combatIntent.putExtra("hero", hero)

@@ -6,17 +6,17 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivityNew : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_new)
+        setContentView(R.layout.activity_main)
 
         // find start button
         val start = findViewById<View>(R.id.button_start) as Button
 
         // set onClick listener to button
         start.setOnClickListener { // create intent to start Character Selection Activity
-            val characterSelectionIntent = Intent(this@MainActivityNew, CharacterSelectionActivityNew::class.java)
+            val characterSelectionIntent = Intent(this@MainActivity, CharacterSelectionActivity::class.java)
 
             // start the new activity
             startActivity(characterSelectionIntent)
