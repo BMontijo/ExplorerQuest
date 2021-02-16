@@ -65,14 +65,14 @@ class CombatActivityNew : AppCompatActivity() {
 
     private fun heroAttack() {
         // get hero attack roll
-        val aHeroAttack = hero!!.getmAttack() + Dice.rollD6()
+        val aHeroAttack = hero!!.getmAttack() + Dice.roll(6)
 
         // get enemy defense roll
-        val aEnemyDefense = enemy!!.getmDefense() + Dice.rollD6()
+        val aEnemyDefense = enemy!!.getmDefense() + Dice.roll(6)
         if (aHeroAttack > aEnemyDefense) {
             // attack successful
             // roll damage
-            val aHeroDamage = hero!!.getmDamage() + Dice.rollD6()
+            val aHeroDamage = hero!!.getmDamage() + Dice.roll(6)
 
             // damage enemy
             enemy!!.setmHealth(enemy!!.getmHealth() - aHeroDamage)
@@ -96,19 +96,19 @@ class CombatActivityNew : AppCompatActivity() {
         // variable for enemy attack, damage, and type
         val aEnemyAttack: Int
         val aEnemyDamage: Int
-        val aEnemyAttackType = Dice.rollD20()
+        val aEnemyAttackType = Dice.roll(20)
         if (aEnemyAttackType <= 18) {
             // normal attack and damage
-            aEnemyAttack = enemy!!.getmAttack() + Dice.rollD6()
-            aEnemyDamage = enemy!!.getmDamage() + Dice.rollD6()
+            aEnemyAttack = enemy!!.getmAttack() + Dice.roll(6)
+            aEnemyDamage = enemy!!.getmDamage() + Dice.roll(6)
         } else {
             // magic attack and damage
-            aEnemyAttack = enemy!!.getmMagic() + Dice.rollD6()
-            aEnemyDamage = enemy!!.getmMagicDamage() + Dice.rollD6()
+            aEnemyAttack = enemy!!.getmMagic() + Dice.roll(6)
+            aEnemyDamage = enemy!!.getmMagicDamage() + Dice.roll(6)
         }
 
         // get hero defense roll
-        val aHeroDefense = hero!!.getmDefense() + Dice.rollD6()
+        val aHeroDefense = hero!!.getmDefense() + Dice.roll(6)
         if (aEnemyAttack > aHeroDefense) {
             // attack successful
             // damage hero
@@ -139,14 +139,14 @@ class CombatActivityNew : AppCompatActivity() {
 
     private fun heroMagic() {
         // get hero attack roll
-        val aHeroMagic = hero!!.getmMagic() + Dice.rollD6()
+        val aHeroMagic = hero!!.getmMagic() + Dice.roll(6)
 
         // get enemy defense roll
-        val aEnemyDefense = enemy!!.getmDefense() + Dice.rollD6()
+        val aEnemyDefense = enemy!!.getmDefense() + Dice.roll(6)
         if (aHeroMagic > aEnemyDefense) {
             // attack successful
             // roll damage
-            val aHeroMagicDamage = hero!!.getmMagicDamage() + Dice.rollD6()
+            val aHeroMagicDamage = hero!!.getmMagicDamage() + Dice.roll(6)
 
             // damage enemy
             enemy!!.setmHealth(enemy!!.getmHealth() - aHeroMagicDamage)
@@ -168,8 +168,8 @@ class CombatActivityNew : AppCompatActivity() {
 
     private fun initiativeCheck() {
         // get character initiative rolls
-        val heroInitiative = hero!!.getmAgility() + Dice.rollD6()
-        val enemyInitiative = enemy!!.getmAgility() + Dice.rollD6()
+        val heroInitiative = hero!!.getmAgility() + Dice.roll(6)
+        val enemyInitiative = enemy!!.getmAgility() + Dice.roll(6)
 
         //compare initiatives
         if (heroInitiative >= enemyInitiative) {
